@@ -4,4 +4,6 @@ Source for Henry Ou's personal website. Plain HTML and CSS; no dependencies or b
 
 Open `index.html` directly to preview.
 
-Cloudflare Pages settings: production branch `main`, framework preset `None`, no build command, output directory `.`. Connect the GitHub repository to deploy automatically on each push.
+Cloudflare Pages: https://henryou-net.pages.dev
+
+Deployment settings: production branch `main`, framework preset `None`, no build command, output directory `.`. The GitHub repository is connected; pushes to `main` deploy automatically.
