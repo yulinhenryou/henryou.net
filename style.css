@@ -1,7 +1,7 @@
 html {
   background: #ffffff;
   color: #111111;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Baskerville, "Baskerville Old Face", "Times New Roman", serif;
 }
 
 body {
@@ -67,6 +67,20 @@ a:focus-visible {
 
 .intro {
   margin: 16px 0 0;
+}
+
+.about {
+  margin-top: 40px;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.about p:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 400px) {
