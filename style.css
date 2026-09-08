@@ -14,8 +14,23 @@ main {
   margin: 0 auto;
 }
 
-h1 {
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin: 0 0 16px;
+}
+
+.portrait {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+}
+
+h1 {
+  margin: 0;
   font-size: 32px;
   font-weight: normal;
 }
@@ -47,4 +62,8 @@ a {
 a:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 4px;
+}
+
+.intro {
+  margin: 16px 0 0;
 }
