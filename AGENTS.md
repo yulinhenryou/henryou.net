@@ -5,7 +5,14 @@
 - Static document root is this repository root. Keep the existing GitHub → Cloudflare Pages deployment (`main`, no build command, output `.`). Do not change hosting, DNS, domain or Git history without an explicit request.
 - White background, black text, subdued readable dates; single column, left aligned, 45rem (720px at default settings) homepage width; articles use a 720px body and centred date/title header. Baskerville first, Songti SC/Noto Serif CJK SC for Chinese, then Georgia/serif. No external fonts or copied system fonts.
 - Keep the current identity layout, portrait/CV placeholders or supplied replacements, email, social URLs, identity introduction and About wording unchanged unless specifically requested.
-- No client JavaScript, frameworks, build system, CMS, database, tracking, navigation bars, cards, decorative effects or invented content. Share `style.css` across all pages. Increment its query version consistently when CSS changes.
+- No client JavaScript, frameworks, build system, CMS, database, tracking, navigation bars, cards, decorative effects or invented content. Share `assets/css/style.css` across all pages. Increment its query version consistently when CSS changes.
+
+## Files and naming
+- Root: `index.html` (homepage), `README.md` (one sentence), `AGENTS.md` (maintenance rules). Keep the repository root as the deployed document root.
+- Shared stylesheet: `assets/css/style.css`. Use its absolute site path from every page.
+- Public resume: `assets/henry-ou-resume.pdf`; preserve this published URL when replacing the CV.
+- Article HTML: `writing/<stable-slug>/index.html`; associated photos: `assets/writing/<stable-slug>/`. Use descriptive lowercase English names separated by hyphens (e.g. `harbour-bridge.webp`), not clipboard IDs or generic numbered filenames.
+- Preserve established article slugs even when titles change. Keep `writing/index.html` for the Updates archive; no duplicate `updates/` directory. Do not create empty directories or extra configuration for hypothetical content.
 
 ## README
 - Keep README.md exactly one sentence: Henry Ou's personal website: [https://henryou.net](https://henryou.net). Do not add maintenance instructions or templates; maintenance rules belong here.
