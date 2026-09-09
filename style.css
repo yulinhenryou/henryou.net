@@ -1,19 +1,35 @@
+/* Shared spacing scale; 1rem follows the browser's default text size. */
+:root {
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --content-width: 45rem;
+  --date-width: 7.5rem;
+  --date-gap: var(--space-6);
+  --section-space: var(--space-8);
+  --heading-space: var(--space-6);
+}
+
 html {
   background: #ffffff;
   color: #000000;
   font-family: Baskerville, "Baskerville Old Face", "Songti SC", "Noto Serif CJK SC", Georgia, serif;
-  font-size: 18px;
+  font-size: 100%;
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
 
 body {
   margin: 0;
-  padding: 80px 24px;
+  padding: 5rem 1.5rem;
 }
 
 main {
-  max-width: 640px;
+  max-width: var(--content-width);
   margin: 0 auto;
 }
 
@@ -21,27 +37,27 @@ main {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   align-items: center;
-  gap: 16px;
-  margin: 0 0 16px;
+  gap: var(--space-4);
+  margin: 0 0 var(--space-4);
 }
 
 .portrait {
-  width: clamp(72px, 22vw, 120px);
+  width: clamp(4.5rem, 22vw, 7.5rem);
   aspect-ratio: 1;
   border: 1px solid currentColor;
   border-radius: 50%;
 }
 
 h1 {
-  margin: 0 0 16px;
-  font-size: 32px;
+  margin: 0 0 var(--space-4);
+  font-size: 2rem;
   font-weight: normal;
   line-height: 1.2;
 }
 
 p {
-  margin: 0 0 16px;
-  font-size: 18px;
+  margin: 0 0 var(--space-4);
+  font-size: 1.125rem;
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
@@ -53,46 +69,68 @@ a {
 
 .socials {
   display: flex;
-  gap: 16px;
+  gap: var(--space-4);
 }
 
-.socials a,
-.cv-placeholder {
+.socials a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 24px;
-  min-height: 32px;
+  min-width: 1.5rem;
+  min-height: 2rem;
 }
 
 a:focus-visible,
 pre:focus-visible,
 .table-scroll:focus-visible {
   outline: 2px solid currentColor;
-  outline-offset: 4px;
+  outline-offset: 0.25rem;
 }
 
 .intro {
-  margin: 16px 0 0;
+  margin: 1rem 0 0;
 }
 
-.section {
-  margin-top: 32px;
+.home {
+  font-size: 1.25rem;
+}
+
+.home .intro,
+.home .section p {
+  font-size: inherit;
+}
+
+.home > .section {
+  margin-top: var(--section-space);
+}
+
+.home > .section + .section {
+  border-top: 1px solid #e5e5e5;
+  padding-top: var(--section-space);
+}
+
+.home > .section > h2 {
+  margin: 0 0 var(--heading-space);
+  font-size: 1.75rem;
+}
+
+.home .about p {
+  margin-bottom: var(--space-4);
 }
 
 h2 {
-  margin: 0 0 16px;
-  font-size: 24px;
+  margin: 0 0 var(--space-4);
+  font-size: 1.5rem;
   font-weight: normal;
   line-height: 1.3;
 }
 
-.section > :last-child {
+.home > .section > :last-child {
   margin-bottom: 0;
 }
 
 h3 {
-  margin: 0 0 4px;
+  margin: 0 0 0.25rem;
   font-size: 1rem;
   font-weight: normal;
 }
@@ -105,34 +143,41 @@ h3 {
   padding: 0;
 }
 
-.experience-entry {
+.experience-entry,
+.writing-list li {
   display: grid;
-  grid-template-columns: 124px 32px minmax(0, 1fr);
-  column-gap: 16px;
-  align-items: start;
+  grid-template-columns: var(--date-width) minmax(0, 1fr);
+  column-gap: var(--date-gap);
+  align-items: baseline;
 }
 
 .experience-detail {
-  grid-column: 3;
+  min-width: 0;
 }
 
-/* Keep the logo column only when an approved local image is available. */
-.experience-entry:not(:has(.institution-logo)) .experience-detail {
-  grid-column: 2 / -1;
+.experience-detail h3,
+.project-list h3 {
+  margin: 0 0 var(--space-2);
+  font-size: 1.25rem;
+}
+
+/* Optional real logo shares the institution's content area. */
+.experience-entry:has(> .institution-logo) {
+  grid-template-columns: var(--date-width) 2rem minmax(0, 1fr);
 }
 
 .institution-logo {
-  grid-column: 2;
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
+  align-self: start;
 }
 
 .entry-date,
 .article-meta,
 figcaption {
-  color: #595959;
-  font-size: 16px;
+  color: #666;
+  font-size: 1rem;
 }
 
 .experience-detail p,
@@ -142,34 +187,36 @@ figcaption {
 
 .experience-entry + .experience-entry,
 .project-list > li + li {
-  margin-top: 24px;
+  margin-top: var(--space-8);
 }
 
 .project-links {
+  font-size: 1rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 16px;
-  margin-top: 8px;
+  gap: 0.5rem 1rem;
+  margin-top: 0.5rem;
 }
 
-.writing-list li {
-  display: grid;
-  grid-template-columns: 124px minmax(0, 1fr);
-  gap: 4px 16px;
-  margin-bottom: 12px;
+.writing-list {
+  font-size: 1.25rem;
+}
+
+.writing-list li + li {
+  margin-top: var(--space-3);
 }
 
 .back-link {
   display: inline-block;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .article-page {
-  max-width: 720px;
+  max-width: 45rem;
 }
 
 .article-header {
-  margin: 24px 0 48px;
+  margin: 1.5rem 0 3rem;
   text-align: center;
 }
 
@@ -178,51 +225,52 @@ figcaption {
   justify-content: center;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 8px 20px;
+  gap: 0.5rem 1.25rem;
 }
 
 .article-header h1 {
-  margin: 16px 0 0;
-  font-size: clamp(36px, 6vw, 56px);
+  margin: 1rem 0 0;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
   line-height: 1.3;
   text-wrap: balance;
 }
 
 .prose {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.75;
 }
 
 .prose p {
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   font-size: inherit;
   line-height: inherit;
 }
 
 .prose h2 {
-  margin-top: 28px;
+  margin-top: 1.75rem;
 }
 
 .prose h3 {
-  margin-top: 24px;
+  font-size: 1.125rem;
+  margin-top: 1.5rem;
 }
 
 .prose ul,
 .prose ol {
   padding-left: 1.4em;
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-4);
 }
 
 .prose li + li {
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
 
 .prose blockquote {
-  margin: 20px 0 20px 1em;
+  margin: 1.25rem 0 1.25rem 1em;
 }
 
 .prose figure {
-  margin: 32px 0;
+  margin: 2rem 0;
 }
 
 .prose img {
@@ -240,18 +288,18 @@ figcaption {
 }
 
 figcaption {
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 pre,
 .table-scroll {
   max-width: 100%;
   overflow-x: auto;
-  margin: 20px 0;
+  margin: 1.25rem 0;
 }
 
 pre {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.6;
   overflow-wrap: normal;
 }
@@ -264,47 +312,49 @@ table {
 
 th,
 td {
-  padding: 8px 16px 8px 0;
+  padding: 0.5rem 1rem 0.5rem 0;
   vertical-align: top;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .article-header {
-    margin: 16px 0 32px;
+    margin: 1rem 0 2rem;
   }
 
   .prose {
-    font-size: 18px;
-  }
-
-  .experience-entry {
-    grid-template-columns: 32px minmax(0, 1fr);
-    row-gap: 4px;
-  }
-
-  .experience-entry .entry-date {
-    grid-column: 1 / -1;
-  }
-
-  .institution-logo {
-    grid-column: 1;
-  }
-
-  .experience-detail {
-    grid-column: 2;
-  }
-
-  .experience-entry:not(:has(.institution-logo)) .experience-detail {
-    grid-column: 1 / -1;
-  }
-
-  .writing-list li {
-    grid-template-columns: minmax(0, 1fr);
+    font-size: 1.125rem;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 25rem) {
   .contact p {
-    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  :root {
+    --section-space: var(--space-6);
+    --heading-space: 1.25rem;
+  }
+
+  body {
+    padding: var(--space-12) 1.25rem;
+  }
+
+  .home,
+  .writing-list {
+    font-size: 1.125rem;
+  }
+
+  .home > .section > h2 {
+    font-size: 1.625rem;
+  }
+
+  .experience-entry,
+  .writing-list li,
+  .experience-entry:has(> .institution-logo) {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--space-2);
   }
 }
