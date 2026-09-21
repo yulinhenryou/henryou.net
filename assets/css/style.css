@@ -235,6 +235,10 @@ figcaption {
   text-wrap: balance;
 }
 
+.article-header .title-part {
+  display: inline-block;
+}
+
 .prose {
   font-size: 1.25rem;
   line-height: 1.75;
