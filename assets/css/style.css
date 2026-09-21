@@ -202,6 +202,14 @@ figcaption {
   font-size: 1.25rem;
 }
 
+.writing-list .entry-date {
+  display: grid;
+  grid-template-columns: 2ch 3.5ch 4ch;
+  column-gap: 0.4ch;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 .writing-list li + li {
   margin-top: var(--space-3);
 }
@@ -295,6 +303,18 @@ figcaption {
 
 .prose blockquote {
   margin: 1.25rem 0 1.25rem 1em;
+}
+
+.prose .compact-quote {
+  margin: var(--space-6) 0;
+}
+
+.prose .compact-quote p {
+  margin: 0;
+}
+
+.prose .compact-quote p + p {
+  margin-top: var(--space-2);
 }
 
 /* A shared reading column for a personal introduction and a complete classic. */
