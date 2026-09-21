@@ -239,6 +239,30 @@ figcaption {
   display: inline-block;
 }
 
+.article-header .split-title {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: clamp(0.75rem, 3vw, 1.5rem);
+}
+
+.split-title .title-accent {
+  justify-self: start;
+  inline-size: min(2.8em, 100%);
+  color: #777;
+  font-family: "Snell Roundhand", "Segoe Script", "Apple Chancery", cursive;
+  font-size: 0.95em;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.split-title .title-accent:first-child {
+  justify-self: end;
+}
+
 .prose {
   font-size: 1.25rem;
   line-height: 1.75;
@@ -316,6 +340,10 @@ figcaption {
   height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+.prose .photo-bottom img {
+  object-position: center bottom;
 }
 
 figcaption {
