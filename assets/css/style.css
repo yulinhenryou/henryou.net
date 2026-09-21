@@ -273,6 +273,33 @@ figcaption {
   margin: 1.25rem 0 1.25rem 1em;
 }
 
+/* A shared reading column for a personal introduction and a complete classic. */
+.prose .classic-text {
+  margin-top: var(--space-12);
+}
+
+.classic-header {
+  margin-bottom: var(--space-6);
+}
+
+.prose .classic-header h2 {
+  margin: 0 0 var(--space-2);
+  font-size: 1.75rem;
+}
+
+.prose .classic-header p {
+  margin: 0;
+}
+
+.prose .text-source {
+  color: #666;
+  font-size: 1rem;
+}
+
+.prose .source-credit {
+  margin: var(--space-8) 0 0;
+}
+
 .prose figure {
   margin: 2rem 0;
 }
