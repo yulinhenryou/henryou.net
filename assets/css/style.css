@@ -42,9 +42,11 @@ main {
 }
 
 .portrait {
+  display: block;
+  height: auto;
+  object-fit: cover;
   width: clamp(4.5rem, 22vw, 7.5rem);
   aspect-ratio: 1;
-  border: 1px solid currentColor;
   border-radius: 50%;
 }
 

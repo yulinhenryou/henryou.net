@@ -11,7 +11,7 @@
 - Root: `index.html` (homepage), `README.md` (one sentence), `AGENTS.md` (maintenance rules). Keep the repository root as the deployed document root.
 - Shared stylesheet: `assets/css/style.css`. Use its absolute site path from every page.
 - Public resume: `assets/henry-ou-resume.pdf`; preserve this published URL when replacing the CV.
-- Use `ohenryworks@gmail.com` consistently in public contact text and mailto links, including the resume. Keep the current CV icon and portrait placeholder until Henry requests a change.
+- Use `ohenryworks@gmail.com` consistently in public contact text and mailto links, including the resume. Keep the current CV icon and supplied avatar (`assets/henry-ou-avatar.webp`) until Henry requests a change. Display the avatar in the existing responsive circle without changing the identity layout.
 - Article HTML: `writing/<stable-slug>/index.html`; associated photos: `assets/writing/<stable-slug>/`. Use descriptive lowercase English names separated by hyphens (e.g. `harbour-bridge.webp`), not clipboard IDs or generic numbered filenames.
 - Preserve established article slugs even when titles change. Keep `writing/index.html` for the Updates archive; no duplicate `updates/` directory. Do not create empty directories or extra configuration for hypothetical content.
 
