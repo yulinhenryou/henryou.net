@@ -243,6 +243,13 @@ figcaption {
   text-wrap: balance;
 }
 
+.article-author {
+  margin: var(--space-3) 0 0;
+  color: #222;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
 .article-header .title-part {
   display: inline-block;
 }
@@ -280,6 +287,20 @@ figcaption {
   margin-bottom: 1.5rem;
   font-size: inherit;
   line-height: inherit;
+}
+
+.prose > :last-child {
+  margin-bottom: 0;
+}
+
+.article-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-top: var(--space-12);
+  color: #666;
+  font-size: 1rem;
 }
 
 .prose h2 {
@@ -348,13 +369,17 @@ figcaption {
   margin: 2rem 0;
 }
 
+/* Plain figures preserve complete screenshots and diagrams without cropping. */
 .prose img {
   display: block;
+  width: auto;
   max-width: 100%;
   height: auto;
+  aspect-ratio: auto;
   margin-inline: auto;
 }
 
+/* Only photographic figures opt in to the shared crop. */
 .prose .photo img {
   width: 100%;
   height: auto;
