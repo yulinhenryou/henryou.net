@@ -1,3 +1,23 @@
+/* Self-hosted Chinese subsets; Latin text keeps the system Baskerville stack. */
+@font-face {
+  font-family: "Zhuque Fangsong Web";
+  src: url("/assets/fonts/zhuque-fangsong-regular.woff2?v=1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+3000-30FF, U+3400-9FFF, U+F900-FAFF, U+FE10-FE1F, U+FE30-FE4F, U+FF00-FFEF, U+20000-2FA1F;
+}
+
+/* Three characters in Quanxue are absent from Zhuque v0.212. */
+@font-face {
+  font-family: "Noto Serif SC Fallback";
+  src: url("/assets/fonts/noto-serif-sc-fallback.woff2?v=1") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+56CB, U+695B, U+8739;
+}
+
 /* Shared spacing scale; 1rem follows the browser's default text size. */
 :root {
   --space-1: .25rem;
@@ -17,7 +37,7 @@
 html {
   background: #ffffff;
   color: #000000;
-  font-family: Baskerville, "Baskerville Old Face", "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+  font-family: Baskerville, "Baskerville Old Face", "Zhuque Fangsong Web", "Noto Serif SC Fallback", "Songti SC", "Noto Serif CJK SC", Georgia, serif;
   font-size: 100%;
   line-height: 1.6;
   overflow-wrap: anywhere;
