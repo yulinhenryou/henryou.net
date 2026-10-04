@@ -1,7 +1,7 @@
 /* Self-hosted Chinese subsets; Latin text keeps the system Baskerville stack. */
 @font-face {
   font-family: "Zhuque Fangsong Web";
-  src: url("/assets/fonts/zhuque-fangsong-regular.woff2?v=1") format("woff2");
+  src: url("/assets/fonts/zhuque-fangsong-regular.woff2?v=4") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -77,6 +77,39 @@ h1 {
   line-height: 1.2;
 }
 
+.identity-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.identity-heading h1 {
+  margin: 0;
+}
+
+.language-link {
+  display: flex;
+  flex: none;
+  align-items: flex-start;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  margin-left: auto;
+  padding-top: var(--space-1);
+  color: #000000;
+  text-decoration: none;
+}
+
+.language-link img {
+  display: block;
+  width: 1.375rem;
+  height: 1.375rem;
+}
+
 p {
   margin: 0 0 var(--space-4);
   font-size: 1.125rem;
@@ -91,6 +124,7 @@ a {
 
 .socials {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-4);
 }
 
@@ -120,6 +154,13 @@ pre:focus-visible,
 .home .intro,
 .home .section p {
   font-size: inherit;
+}
+
+.home .intro,
+.home .about p,
+.home .project-list p {
+  text-align: justify;
+  text-align-last: start;
 }
 
 .home > .section {
