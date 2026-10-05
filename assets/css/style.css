@@ -369,7 +369,8 @@ figcaption {
 }
 
 .prose .keep-together {
-  white-space: nowrap;
+  display: inline-block;
+  max-width: 100%;
 }
 
 .prose > :last-child {
@@ -456,10 +457,8 @@ figcaption {
 /* Plain figures preserve complete screenshots and diagrams without cropping. */
 .prose img {
   display: block;
-  width: auto;
   max-width: 100%;
   height: auto;
-  aspect-ratio: auto;
   margin-inline: auto;
 }
 
