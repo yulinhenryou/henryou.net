@@ -1,7 +1,7 @@
 /* Self-hosted Chinese subsets; Latin text keeps the system Baskerville stack. */
 @font-face {
   font-family: "Zhuque Fangsong Web";
-  src: url("/assets/fonts/zhuque-fangsong-regular.woff2?v=4") format("woff2");
+  src: url("/assets/fonts/zhuque-fangsong-regular.woff2?v=6") format("woff2");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -532,6 +532,12 @@ td {
   .home,
   .writing-list {
     font-size: 1.125rem;
+  }
+
+  .home .intro,
+  .home .about p,
+  .home .project-list p {
+    text-align: left;
   }
 
   .home > .section > h2 {
