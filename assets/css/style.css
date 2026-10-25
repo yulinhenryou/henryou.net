@@ -218,6 +218,11 @@ h3 {
   min-width: 0;
 }
 
+.experience-entry .date-note {
+  display: block;
+  font-size: 0.875rem;
+}
+
 .experience-detail h3,
 .project-list h3 {
   margin: 0 0 var(--space-2);
@@ -542,6 +547,13 @@ td {
 
   .home > .section > h2 {
     font-size: 1.625rem;
+  }
+
+  .experience-entry .entry-date {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: var(--space-2);
   }
 
   .experience-entry,
